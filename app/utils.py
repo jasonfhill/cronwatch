@@ -17,9 +17,6 @@ def secure_filename(filename):
     to :func:`os.path.join`.  The filename returned is an ASCII only string
     for maximum portability.
 
-    On windows systems the function also makes sure that the file is not
-    named after one of the special device files.
-
     >>> secure_filename("My cool movie.mov")
     'My_cool_movie.mov'
     >>> secure_filename("../../../etc/passwd")
@@ -30,8 +27,6 @@ def secure_filename(filename):
     The function might return an empty filename.  It's your responsibility
     to ensure that the filename is unique and that you generate random
     filename if the function returned an empty one.
-
-    .. versionadded:: 0.5
 
     :param filename: the filename to secure
     """
